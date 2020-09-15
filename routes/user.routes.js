@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const isLogged = require('../controllers/user.controller');
 
-router.get('/logged', isLogged,  (req, res) => {
+router.get('/logged', isLogged, (req, res) => {
   res.render('logged');
 });
 
@@ -17,6 +17,5 @@ router.get('/profile', isLogged, (req, res) => {
 router.get('/profile/settings', isLogged, (req, res) => {
   res.render('settings');
 });
-
 
 module.exports = router;
