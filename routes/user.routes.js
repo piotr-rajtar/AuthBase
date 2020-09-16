@@ -3,7 +3,10 @@ const router = express.Router();
 const isLogged = require('../controllers/user.controller');
 
 router.get('/logged', isLogged, (req, res) => {
-  res.render('logged');
+  res.render('logged', { 
+    username: req.user._json.name,
+    imageSource: req.user._json.picture, 
+  });
 });
 
 router.get('/no-permission', (req, res) => {
